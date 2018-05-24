@@ -16,7 +16,7 @@
 }
 
 .searchbox button.la-Search:hover {
-    background: none !important;
+    box-shadow: none !important;
 }
 
 .searchbox button.la-Search::before {
