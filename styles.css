@@ -14,3 +14,7 @@
     text-shadow: none;
     transition: all ease .4s;
 }
+
+.searchbox button.la-Search::before {
+    color:red !important;
+}
