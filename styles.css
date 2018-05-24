@@ -1,7 +1,7 @@
 .landing.searchbox>section {
     padding:0 !important;
     margin:0;
-    border:1px solid gray;
+    border:1px solid red;
     background: none;
 }
 
