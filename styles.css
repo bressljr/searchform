@@ -22,3 +22,39 @@
 .searchbox button.la-Search::before {
     color:red !important;
 }
+
+[data-podcssid=id-4t8c9gk] div.podwrapper {
+    border-top: none;
+}
+
+[data-podcssid=id-4t8c9gk] h2.header {
+    display:none;
+}
+
+.browse .podwrapper {
+    border: none;
+}
+
+.browse ul.tabheaders {
+    background:none;
+}
+
+.browse ul.tabheaders button {
+    border:none !important;
+    outline:none !important;
+    font-size:1.3em
+}
+
+.browse ul.tabheaders .active button {
+    color: inherit !important;
+    font-weight:bold;
+    background: #fff;
+    border-bottom: 3px solid red !important;
+    margin-bottom: -1px;
+}
+
+.browse h2 {
+    font-size:3em ;
+    font-family:lato-thin;
+    margin:50px 0 30px;
+}
