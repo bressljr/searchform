@@ -60,3 +60,7 @@
     font-family:lato-thin;
     margin:50px 0 30px;
 }
+
+.browse .pipeicon, .browse li.item>button.la-Info  {
+    display:none;
+}
