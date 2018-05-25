@@ -23,8 +23,10 @@
     color:red !important;
 }
 
+
+/* Explore Content Updates */
 [data-podcssid=id-4t8c9gk] div.podwrapper {
-    border-top: none;
+    border-top: none !important;
 }
 
 [data-podcssid=id-4t8c9gk] h2.header {
