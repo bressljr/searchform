@@ -64,3 +64,5 @@
 .browse .pipeicon, .browse li.item>button.la-Info  {
     display:none !important;
 }
+
+#grid-container { display:none !important; }
