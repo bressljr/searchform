@@ -62,5 +62,5 @@
 }
 
 .browse .pipeicon, .browse li.item>button.la-Info  {
-    display:none;
+    display:none !important;
 }
