@@ -55,7 +55,7 @@
     margin-bottom: -1px;
 }
 
-.browse h2 {
+h2.sectionheader {
     font-size:3em ;
     font-family:lato-thin;
     margin:50px 0 30px;
