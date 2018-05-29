@@ -1,8 +1,16 @@
+.practiceareacontainer .searchbox {
+    max-width:none;
+}
+
 .landing.searchbox>section {
     padding:0 !important;
     margin:0;
     border:1px solid #d2d4d5;
     background: none;
+}
+
+.landing.searchbox .input {
+    border-right: 1px solid #D2D4D4;
 }
 
 .searchbox button.la-Search {
