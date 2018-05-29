@@ -17,6 +17,12 @@
   grid-column-end: 2;   
 }
 
+a.selecty-selected {
+    border-bottom:none !important;
+    font-size:1.5em !important;
+    font-family:lato-regular;
+}
+
 .searchsection .prefilter {
   background:#fff;
   position:relative;
