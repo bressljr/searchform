@@ -83,6 +83,26 @@ a.selecty-selected {
     padding-bottom: 50px;
 }
 
+
+.landing.searchbox .input {
+    height:55px !important;
+}
+
+.landing.searchbox .expandingTextarea {
+    min-height:55px;
+}
+
+.landing.searchbox button.la-Search {
+    width:55px;
+    height:55px
+}
+
+.landing.searchbox .input pre, .landing.searchbox .input textarea {
+    padding-top:15px;
+    font-size:1.5em;
+}
+
+
 .globalnav .navchildemenucontainer, .globalnav .navchildmenucontainer {
     border-top: none !important; 
 }
