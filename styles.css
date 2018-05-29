@@ -196,5 +196,7 @@ h2.sectionheader {
 #grid-container { display:none !important; }
 
 .selecty .selecty-options li {
-    padding:10px;
+    padding:10px !important;
+    line-height:auto !important;
+    height:auto !important;
 }
