@@ -34,7 +34,7 @@ a.selecty-selected {
   grid-column: span 2;
 }
 
-.searchsection .prefilter.moreopts.divider {
+.searchsection .moreopts.divider {
   grid-column-start: 1; 
   grid-column-end: 5; 
   padding:0 !important;
