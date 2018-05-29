@@ -4,7 +4,7 @@
     display: grid;
     column-gap: 30px;
     row-gap: 1.5em;
-    grid-template-columns: repeat(4, auto)
+    grid-template-columns: repeat(4, 1fr)
 }
 
 .searchsection .juris {
@@ -194,3 +194,7 @@ h2.sectionheader {
 }
 
 #grid-container { display:none !important; }
+
+.selecty .selecty-options li {
+    padding:10px;
+}
