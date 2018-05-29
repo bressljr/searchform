@@ -1,5 +1,15 @@
+.searchbox>div { display:auto;}
+
 .practiceareacontainer .searchbox {
-    /* max-width:none !important; */
+    display: grid;
+    column-gap: 30px;
+    row-gap: 1em;
+    grid-template-columns: repeat(4, auto)
+}
+
+.practiceareacontainer .searchbox > section {
+    grid-column-start: 1; 
+    grid-column-end: 5; 
 }
 
 .searchsection {
