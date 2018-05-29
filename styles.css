@@ -2,6 +2,15 @@
     /* max-width:none !important; */
 }
 
+.searchsection {
+    background: #e9e9ea;
+    padding-bottom: 50px;
+}
+
+.globalnav .navchildemenucontainer, .globalnav .navchildmenucontainer {
+    border-top: none !important; 
+}
+
 .comp.practiceareacontainer .headerpod-wrapper {
     padding-top:0px !important;
 }
@@ -26,7 +35,7 @@
 .searchbox button.la-Search {
     height: 36px;
     width: 39px;
-    background: none;
+    background: #fff;
     color: #fff;
     box-shadow: none;
     text-shadow: none;
