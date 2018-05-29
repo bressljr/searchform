@@ -6,6 +6,12 @@
     padding-top:0px !important;
 }
 
+.pod-wrapper.browse {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .landing.searchbox>section {
     padding:0 !important;
     margin:0;
