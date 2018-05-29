@@ -64,6 +64,20 @@ a.selecty-selected {
     border-radius:15px;
 }
 
+.moreoptions > button:after {
+    content:'More Options';
+}
+
+.showopts .moreoptions > button:after {
+    content:'Fewer Options'
+}
+.moreopts {
+    display:none;
+}
+.showopts .moreopts {
+    display:block;
+}
+
 .searchsection {
     background: #e9e9ea;
     padding-bottom: 50px;
