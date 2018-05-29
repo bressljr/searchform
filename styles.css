@@ -1,4 +1,7 @@
-.searchbox>div { display:auto;}
+.searchbox>div {
+    display:block !important;
+    background:none;
+}
 
 .practiceareacontainer .searchbox {
     display: grid;
