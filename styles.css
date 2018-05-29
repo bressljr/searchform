@@ -2,6 +2,10 @@
     max-width:none !important;
 }
 
+.comp.practiceareacontainer .headerpod-wrapper {
+    padding-top:none !important;
+}
+
 .landing.searchbox>section {
     padding:0 !important;
     margin:0;
