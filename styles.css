@@ -17,6 +17,13 @@
   grid-column-end: 2;   
 }
 
+.searchsection .prefilter {
+  background:#fff;
+  position:relative;
+  padding:20px 10px 5px;
+  border:1px solid #d2d4d5;
+}
+
 .practiceareacontainer .searchbox {
     grid-column-start: 1; 
     grid-column-end: 5; 
