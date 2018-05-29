@@ -7,6 +7,16 @@
     grid-template-columns: repeat(4, auto)
 }
 
+.searchsection .juris {
+  grid-column-start: 2; 
+  grid-column-end: 5; 
+}
+
+.searchsection .hlct {
+  grid-column-start: 1; 
+  grid-column-end: 2;   
+}
+
 .practiceareacontainer .searchbox {
     grid-column-start: 1; 
     grid-column-end: 5; 
