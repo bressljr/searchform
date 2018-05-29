@@ -3,7 +3,7 @@
     margin:0 auto;
     display: grid;
     column-gap: 30px;
-    row-gap: 1em;
+    row-gap: 1.5em;
     grid-template-columns: repeat(4, auto)
 }
 
@@ -28,6 +28,20 @@ a.selecty-selected {
   position:relative;
   padding:5px 10px;
   border:1px solid #d2d4d5;
+}
+
+.searchsection .prefilter.moreopts {
+  grid-column: span 2;
+}
+
+.searchsection .prefilter.moreopts.divider {
+  grid-column-start: 1; 
+  grid-column-end: 5; 
+  padding:0 !important;
+  margin:0;
+  border:none !important;
+  height:1px;
+  background:#d2d4d5;
 }
 
 .practiceareacontainer .searchbox {
