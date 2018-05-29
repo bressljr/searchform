@@ -1,16 +1,13 @@
-.searchbox>div {
-    display:block !important;
-    background:none;
-}
-
-.practiceareacontainer .searchbox {
+.searchsection > div {
+    max-width: 1280px;
+    margin:0 auto;
     display: grid;
     column-gap: 30px;
     row-gap: 1em;
     grid-template-columns: repeat(4, auto)
 }
 
-.practiceareacontainer .searchbox > section {
+.practiceareacontainer .searchbox {
     grid-column-start: 1; 
     grid-column-end: 5; 
 }
