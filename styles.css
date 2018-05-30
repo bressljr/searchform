@@ -25,6 +25,7 @@ a.selecty-selected {
 
 .selecty .selecty-options {
     width:auto !important;
+    min-width:100% !important;
 }
 
 .selecty .selecty-options li {
@@ -127,7 +128,7 @@ a.selecty-selected {
 
 .searchbox button.la-Search {
     width:55px;
-    height:55px
+    height:55px;
     background: #fff;
     color: #fff;
     box-shadow: none;
