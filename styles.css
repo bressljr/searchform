@@ -64,12 +64,13 @@ a.selecty-selected {
   grid-column-end: 5; 
 }
 .searchsection #datefilters > button {
-    padding: 5px 24px;
+    padding: 10px 24px;
     height: auto;
     border-radius: 2px; 
     background: #fff;
     border: 1px solid #4A90E2;
     margin-top: 5px;
+    margin-right:5px;
 }
 
 .searchsection #datefilters > button.active {
