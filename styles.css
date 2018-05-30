@@ -59,6 +59,11 @@ a.selecty-selected {
   grid-column: span 2;
 }
 
+.searchsection .moreopts.datefilters {
+  grid-column-start: 1; 
+  grid-column-end: 5; 
+}
+
 .searchsection .moreopts.divider {
   grid-column-start: 1; 
   grid-column-end: 5; 
@@ -95,6 +100,8 @@ a.selecty-selected {
 .showopts .moreopts {
     display:block;
 }
+
+
 
 /* Searchbox */
 
