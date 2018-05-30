@@ -59,7 +59,7 @@ a.selecty-selected {
   grid-column: span 2;
 }
 
-.searchsection .moreopts.datefilters {
+.searchsection #datefilters.moreopts {
   grid-column-start: 1; 
   grid-column-end: 5; 
 }
