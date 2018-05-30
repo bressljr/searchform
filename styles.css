@@ -1,3 +1,9 @@
+/* Container styling */
+.searchsection {
+    background: #e9e9ea;
+    padding-bottom: 50px;
+}
+
 .searchsection > div {
     max-width: 1280px;
     margin:0 auto;
@@ -5,6 +11,27 @@
     column-gap: 30px;
     row-gap: 1.5em;
     grid-template-columns: repeat(4, 1fr)
+}
+
+
+
+/* Filters */
+
+a.selecty-selected {
+    border-bottom:none !important;
+    font-size:1.5em !important;
+    font-family:lato-regular;
+}
+
+.selecty .selecty-options {
+    width:auto !important;
+}
+
+.selecty .selecty-options li {
+    padding:8px !important;
+    line-height:normal !important;
+    height:auto !important;
+    white-space: nowrap;
 }
 
 .searchsection .juris {
@@ -17,19 +44,16 @@
   grid-column-end: 2;   
 }
 
-a.selecty-selected {
-    border-bottom:none !important;
-    font-size:1.5em !important;
-    font-family:lato-regular;
-}
-
 .searchsection .prefilter {
+  min-width:0px;
   background:#fff;
   position:relative;
   padding:5px 10px;
   border:1px solid #d2d4d5;
 }
 
+
+/* More Options + Filters */
 .searchsection .prefilter.moreopts {
   grid-column: span 2;
 }
@@ -42,13 +66,6 @@ a.selecty-selected {
   border:none !important;
   height:1px;
   background:#d2d4d5;
-}
-
-.practiceareacontainer .searchbox {
-    grid-column-start: 1; 
-    grid-column-end: 5; 
-    margin:0px !important;
-    max-width:none !important;
 }
 
 .moreoptions {
@@ -78,43 +95,27 @@ a.selecty-selected {
     display:block;
 }
 
-.searchsection {
-    background: #e9e9ea;
-    padding-bottom: 50px;
-}
+/* Searchbox */
 
+.practiceareacontainer .searchbox {
+    grid-column-start: 1; 
+    grid-column-end: 5; 
+    margin:0px !important;
+    max-width:none !important;
+}
 
 .landing.searchbox .input {
     height:55px !important;
+    border-right: 1px solid #D2D4D4;
 }
 
 .landing.searchbox .expandingTextarea {
     min-height:55px;
 }
 
-.landing.searchbox button.la-Search {
-    width:55px;
-    height:55px
-}
-
 .landing.searchbox .input pre, .landing.searchbox .input textarea {
     padding-top:15px;
     font-size:1.5em;
-}
-
-
-.globalnav .navchildemenucontainer, .globalnav .navchildmenucontainer {
-    border-top: none !important; 
-}
-
-.comp.practiceareacontainer .headerpod-wrapper {
-    padding-top:0px !important;
-}
-
-.pod-wrapper.browse {
-    max-width: 1280px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .landing.searchbox>section {
@@ -124,13 +125,9 @@ a.selecty-selected {
     background: none;
 }
 
-.landing.searchbox .input {
-    border-right: 1px solid #D2D4D4;
-}
-
 .searchbox button.la-Search {
-    height: 36px;
-    width: 39px;
+    width:55px;
+    height:55px
     background: #fff;
     color: #fff;
     box-shadow: none;
@@ -145,6 +142,24 @@ a.selecty-selected {
 .searchbox button.la-Search::before {
     color:red !important;
 }
+
+
+
+/* Misc */
+.globalnav .navchildemenucontainer, .globalnav .navchildmenucontainer {
+    border-top: none !important; 
+}
+
+.comp.practiceareacontainer .headerpod-wrapper {
+    padding-top:0px !important;
+}
+
+.pod-wrapper.browse {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 
 /* Explore Content Updates */
@@ -195,8 +210,3 @@ h2.sectionheader {
 
 #grid-container { display:none !important; }
 
-.selecty .selecty-options li {
-    padding:10px !important;
-    line-height:auto !important;
-    height:auto !important;
-}
