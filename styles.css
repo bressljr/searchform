@@ -35,6 +35,11 @@ a.selecty-selected {
     white-space: nowrap;
 }
 
+.selecty .selecty-options li.selected {
+    color:inherit !important;
+    font-weight:bold;
+}
+
 .prefilter.moreopts .selecty .selecty-options li:first-child { display:none; }
 
 .searchsection .juris {
