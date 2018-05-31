@@ -35,6 +35,8 @@ a.selecty-selected {
     white-space: nowrap;
 }
 
+.prefilter.pat .selecty .selecty-options li:first-child { display:none; }
+
 .searchsection .juris {
   grid-column-start: 2; 
   grid-column-end: 5; 
@@ -70,7 +72,7 @@ a.selecty-selected {
     background: #fff;
     border: 1px solid #4A90E2;
     margin-top: 5px;
-    margin-right:5px;
+    margin-right:10px;
 }
 
 .searchsection #datefilters > button.active {
