@@ -10,7 +10,7 @@
     display: grid;
     column-gap: 30px;
     row-gap: 1.5em;
-    grid-template-columns: repeat(4, 1fr)
+    grid-template-columns: repeat(6, 1fr)
 }
 
 
@@ -43,13 +43,13 @@ a.selecty-selected {
 .prefilter.moreopts .selecty .selecty-options li:first-child { display:none; }
 
 .searchsection .juris {
-  grid-column-start: 2; 
-  grid-column-end: 5; 
+  grid-column-start: 3; 
+  grid-column-end: 7; 
 }
 
 .searchsection .hlct {
   grid-column-start: 1; 
-  grid-column-end: 2;   
+  grid-column-end: 3;   
 }
 
 .searchsection .prefilter {
@@ -63,12 +63,12 @@ a.selecty-selected {
 
 /* More Options + Filters */
 .searchsection .prefilter.moreopts {
-  grid-column: span 2;
+  grid-column: span 3;
 }
 
 .searchsection #datefilters.moreopts {
   grid-column-start: 1; 
-  grid-column-end: 5; 
+  grid-column-end: 7; 
 }
 .searchsection #datefilters > button {
     padding: 10px 24px;
@@ -88,7 +88,7 @@ a.selecty-selected {
 
 .searchsection .moreopts.divider {
   grid-column-start: 1; 
-  grid-column-end: 5; 
+  grid-column-end: 7; 
   padding:0 !important;
   margin:0;
   border:none !important;
@@ -98,7 +98,7 @@ a.selecty-selected {
 
 .moreoptions {
     grid-column-start: 1;
-    grid-column-end: 5;
+    grid-column-end: 7;
     text-align:center;
     padding-top:20px;
 }
@@ -174,7 +174,7 @@ a.selecty-selected {
 
 .practiceareacontainer .searchbox {
     grid-column-start: 1; 
-    grid-column-end: 5; 
+    grid-column-end: 7; 
     margin:0px !important;
     max-width:none !important;
 }
