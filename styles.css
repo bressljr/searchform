@@ -167,6 +167,8 @@ a.selecty-selected {
     transform-origin: 100% 100%;
 }
 
+.favs .selecty .selecty-options { width:100% !important; }
+.favs .selecty .selecty-options li { white-space: normal !important; }
 
 /* Searchbox */
 
