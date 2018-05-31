@@ -127,9 +127,14 @@ a.selecty-selected {
 .appliedfilters {
     grid-column-start: 1;
     grid-column-end: 7; 
+    display:none;
 }
 
-
+.appliedfilters button {
+    padding:5px;
+    background:#fff;
+    border:1px solid blue;
+}
 
 .selecty .selecty-options li { position:relative !important; }
 
