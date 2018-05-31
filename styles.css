@@ -131,9 +131,19 @@ a.selecty-selected {
 }
 
 .appliedfilters button {
-    padding:5px;
+    padding:5px 10px;
     background:#fff;
-    border:1px solid blue;
+    border:1px solid #4A90E2;
+    margin-left:10px;
+}
+
+.appliedfilters button > span {
+    margin-left:10px;
+    vertical-align: middle;
+}
+
+.appliedfilters button > span:before {
+    color: #4A90E2; 
 }
 
 .selecty .selecty-options li { position:relative !important; }
