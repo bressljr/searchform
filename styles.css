@@ -25,6 +25,10 @@ a.selecty-selected {
     font-family:lato-regular;
 }
 
+a.selecty-selected > span {
+    font-size:.6em;
+}
+
 .selecty .selecty-options {
     width:auto !important;
     min-width:100% !important;
