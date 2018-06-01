@@ -13,7 +13,6 @@
 // @match        https://advance.lexis.com/firsttime*
 // @grant        GM_addStyle
 // @grant        GM_getResourceText
-// @run-at       document-end
 // ==/UserScript==
 
 (function() {
@@ -26,7 +25,13 @@
     GM_addStyle (selectyCSS);
 
 
+
+    //waitForKeyElements(".searchbox", runMain, true);
+
     window.addEventListener('load', function() {
+
+    //function runMain() {
+
 
         //REMOVE UNUSED ELEMENTS
         $(".highlanderpod, .getadoc, .searchbox .options").remove();
@@ -105,6 +110,8 @@
         });
 
     }, false);
+
+    //}
 
     function applyPATFilters() {
           $(".ssat-filters input:checkbox").click();
