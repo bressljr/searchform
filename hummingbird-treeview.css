@@ -5,7 +5,11 @@
     width: 1200px;
     right: -10px;
     border: 1px solid gray;
-    z-index: 100;
+    z-index: 10;
+    display: grid;
+    column-gap: 30px;
+    row-gap: 1.5em;
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .hummingbird-treeview,
