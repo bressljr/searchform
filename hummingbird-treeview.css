@@ -1,3 +1,13 @@
+#juris-tree {
+    overflow-y: scroll;
+    position: absolute;
+    background: #fff;
+    width: 1200px;
+    right: -10px;
+    border: 1px solid gray;
+    z-index: 100;
+}
+
 .hummingbird-treeview,
 .hummingbird-treeview *
 {
@@ -40,14 +50,4 @@
     cursor: pointer;
     font-weight: bold;
     vertical-align: text-bottom;
-}
-
-.hummingbird-treeview {
-    overflow-y: scroll;
-    position: absolute;
-    background: #fff;
-    width: 1200px;
-    right: -10px;
-    border: 1px solid gray;
-    z-index: 100;
 }
