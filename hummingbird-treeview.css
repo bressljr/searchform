@@ -31,10 +31,15 @@
     display: none;
 }
 
+.hummingbird-treeview .fa::before, .hummingbird-treeview .icon::before {
+    font-weight:bold;
+}
+
 .hummingbird-treeview .fa, .hummingbird-treeview .icon {
     font-style: normal;
     cursor: pointer;
     font-weight: bold;
+    vertical-align: text-bottom;
 }
 
 .hummingbird-treeview {
