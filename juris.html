@@ -95,7 +95,7 @@
 		    }
 		    //
 		    item = item + '<li>' +"\n";
-		    item = item + '<i class="fa fa-plus"></i>' + "\n";
+		    item = item + '<i class="icon la-ZoomIn"></i>' + "\n";
 		    item = item + '<label>' + "\n";
 		    item = item + '<input id="' + id_str  + '" data-id="' + data_id + '" type="checkbox" /> ' + treeText;
 		    item = item + '</label>' + "\n";
@@ -160,8 +160,8 @@
 	    return this.each(function(){
 		//-------------------options-------------------------------------------------------//
 		//change symbols
-		if (options.collapsedSymbol != "fa-plus") {
-		    $(this).find("i").removeClass("fa-plus").addClass(options.collapsedSymbol);
+		if (options.collapsedSymbol != "la-ZoomIn") {
+		    $(this).find("i").removeClass("la-ZoomIn").addClass(options.collapsedSymbol);
 		}
 
 		//hide checkboxes
@@ -405,8 +405,8 @@
 
     //options defaults
     $.fn.hummingbird.defaults = {
-	expandedSymbol: "fa-minus",
-	collapsedSymbol: "fa-plus",
+	expandedSymbol: "la-ZoomOut",
+	collapsedSymbol: "la-ZoomIn",
 	collapseAll: true,
 	checkboxes: "enabled",
 	checkboxesGroups: "enabled",
