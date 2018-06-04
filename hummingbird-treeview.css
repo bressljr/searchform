@@ -2,14 +2,15 @@
 .hummingbird-treeview *
 {
     list-style: none;
-    font-size: 20px;
+    font-size: 15px;
     line-height: 24px;
 }
 
 .hummingbird-treeview label {
     font-weight: normal;
+    display:inline-block;
+    
 }
-
 
 .hummingbird-treeview input[type=checkbox] {
     width : 16px;
@@ -18,12 +19,30 @@
     margin: 0px;
 }
 
+.hummingbird-end-node {
+    margin-left: 20px !important;
+}
+
+.hummingbird-treeview li ul {
+    padding-left: 35px;
+}
+
 .hummingbird-treeview ul:not(.hummingbird-base) {
     display: none;
 }
 
-.hummingbird-treeview .fa {
+.hummingbird-treeview .fa, .hummingbird-treeview .icon {
     font-style: normal;
     cursor: pointer;
+    font-weight: bold;
 }
 
+.hummingbird-treeview {
+    overflow-y: scroll;
+    position: absolute;
+    background: #fff;
+    width: 1200px;
+    right: -10px;
+    border: 1px solid gray;
+    z-index: 100;
+}
