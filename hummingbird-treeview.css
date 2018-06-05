@@ -19,6 +19,12 @@
     padding: 10px;
     border-bottom: 1px solid gray;
 }
+
+#juris-tree #globalopts label {
+    display:inline-block;
+    margin-left:20px;
+}
+
 .hummingbird-treeview,
 .hummingbird-treeview *
 {
@@ -68,4 +74,8 @@
 
 .hummingbird-treeview li {
     padding: 4px 0;
+}
+
+div#treeview_container {
+    padding-left: 10px;
 }
