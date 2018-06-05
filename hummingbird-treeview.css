@@ -8,11 +8,17 @@
     border: 1px solid gray;
     z-index: 30;
     display: grid;
-    column-gap: 30px;
-    row-gap: 1.5em;
+    column-gap: 20px;
+    row-gap: .5em;
+    grid-template-rows: 50px auto;
     grid-template-columns: repeat(4, 1fr);
 }
-
+#juris-tree #globalopts {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    padding: 10px;
+    border-bottom: 1px solid gray;
+}
 .hummingbird-treeview,
 .hummingbird-treeview *
 {
@@ -40,6 +46,7 @@
 .hummingbird-treeview li ul {
     padding-left: 35px;
 }
+
 
 .hummingbird-treeview ul:not(.hummingbird-base) {
     display: none;
