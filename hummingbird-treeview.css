@@ -1,5 +1,6 @@
 #juris-tree {
     overflow-y: scroll;
+    display:none;
     height:500px;
     position: absolute;
     background: #fff;
