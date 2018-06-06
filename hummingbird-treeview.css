@@ -1,6 +1,5 @@
 #juris-tree {
     overflow-y: scroll;
-    display:none;
     height:500px;
     position: absolute;
     background: #fff;
@@ -59,7 +58,6 @@
     display: inline-block;
     height: 15px;
     border-radius: 2px;
-    vertical-align: bottom;
 }
 
 .hummingbird-treeview input[type=checkbox]:checked:before, #globalopts input[type=checkbox]:checked:before {
