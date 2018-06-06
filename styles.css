@@ -231,7 +231,6 @@ a.selecty-selected > span {
 .searchbox button.la-Search {
     width:55px !important;
     height:55px !important;
-    background: #fff;
     color: #fff;
     box-shadow: none;
     text-shadow: none;
@@ -243,7 +242,7 @@ a.selecty-selected > span {
 }
 
 .searchbox button.la-Search::before {
-    color:red !important;
+    color:#fff !important;
 }
 
 
