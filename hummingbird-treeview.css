@@ -39,7 +39,7 @@
     line-height:1.5em;
 }
 
-.hummingbird-treeview input[type=checkbox] {
+.hummingbird-treeview input[type=checkbox], #globalopts input[type=checkbox] {
     width : 16px;
     height :16px;
     padding: 0px;
@@ -48,7 +48,7 @@
     position: relative;
 }
 
-.hummingbird-treeview input[type=checkbox]:before {
+.hummingbird-treeview input[type=checkbox]:before, #globalopts input[type=checkbox]:before {
     content: '';
     margin-right: 10px;
     border: 2px solid #5a5a5a;
@@ -60,7 +60,7 @@
     vertical-align: bottom;
 }
 
-.hummingbird-treeview input[type=checkbox]:checked:before {
+.hummingbird-treeview input[type=checkbox]:checked:before, #globalopts input[type=checkbox]:checked:before {
     content: '';
     margin-right: 10px;
     border: 2px solid #5A90DC;
@@ -71,7 +71,7 @@
     border-radius: 2px;
     vertical-align: bottom;
 }
-.hummingbird-treeview input[type=checkbox]:checked:after {
+.hummingbird-treeview input[type=checkbox]:checked:after, #globalopts input[type=checkbox]:checked:after {
     content: '';
     position: absolute;
     top: 3px;
@@ -88,7 +88,7 @@
     transform-origin: 100% 100%;
 }
 
-.hummingbird-treeview input[type=checkbox]:indeterminate:before {
+.hummingbird-treeview input[type=checkbox]:indeterminate:before, #globalopts input[type=checkbox]:indeterminate:before {
     content: '';
     background: #5A90DC;
     outline: 3px solid #fff;
