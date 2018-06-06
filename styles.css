@@ -22,7 +22,7 @@
 a.selecty-selected {
     border-bottom:none !important;
     font-size:1.5em !important;
-    font-family:lato-regular;
+    font-family:lato, arial;
 }
 
 a.selecty-selected > span {
@@ -297,9 +297,10 @@ a.selecty-selected > span {
 
 h2.sectionheader {
     font-size:3em ;
-    font-family:lato-thin;
+    font-family:lato, arial;
     margin:0px;
     padding-top:30px;
+    font-weight: 300;
 }
 
 .exploresection h2.sectionheader {
