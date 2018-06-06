@@ -35,7 +35,7 @@
 .hummingbird-treeview label {
     font-weight: normal;
     display: flex; 
-    position: relative;
+    line-height:1.5em;
 }
 
 .hummingbird-treeview input[type=checkbox] {
@@ -44,6 +44,7 @@
     padding: 0px;
     margin: 2px 5px 0 0;
     flex-shrink: 0;
+    position: relative;
 }
 
 .hummingbird-treeview input[type=checkbox]:before {
