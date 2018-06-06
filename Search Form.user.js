@@ -7,30 +7,39 @@
 // @require      https://gist.github.com/raw/2625891/waitForKeyElements.js
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js
 // @require      https://raw.githubusercontent.com/bressljr/searchform/master/selecty.js
-// @resource     customcss https://raw.githubusercontent.com/bressljr/searchform/master/styles.css?v=1
-// @resource     selectycss https://raw.githubusercontent.com/bressljr/searchform/master/selecty.css
+// @resource     customcss https://raw.githubusercontent.com/bressljr/searchform/master/styles.css?v=3
+// @resource     selectycss https://raw.githubusercontent.com/bressljr/searchform/master/selecty.css?v=1
+// @resource     juriscss https://raw.githubusercontent.com/bressljr/searchform/master/hummingbird-treeview.css?v=3
+// @resource     jurishtml https://raw.githubusercontent.com/bressljr/searchform/master/juris.html?v=1
 // @match        https://advance.lexis.com/usresearchhome/*
 // @match        https://advance.lexis.com/firsttime*
 // @grant        GM_addStyle
 // @grant        GM_getResourceText
 // ==/UserScript==
 
+
 (function() {
     'use strict';
 
     var customCSS = GM_getResourceText ("customcss"),
-        selectyCSS = GM_getResourceText ("selectycss");
+        selectyCSS = GM_getResourceText ("selectycss"),
+        jurisCSS = GM_getResourceText ("juriscss"),
+        faCSS = GM_getResourceText ("fontawesome"),
+        jurisHTML = GM_getResourceText ("jurishtml");
 
     GM_addStyle (customCSS);
     GM_addStyle (selectyCSS);
+    GM_addStyle (jurisCSS);
+    GM_addStyle (faCSS);
 
 
 
-    //waitForKeyElements(".searchbox", runMain, true);
+    waitForKeyElements(".ct-landing-wrapper", runMain, true);
 
-    window.addEventListener('load', function() {
+    //window.addEventListener('load', function() {
 
-    //function runMain() {
+    function runMain() {
+        //$("body").append(jurisHTML);
 
 
         //REMOVE UNUSED ELEMENTS
@@ -42,7 +51,7 @@
 
 
         //INJECT HLCT, JURIS, ETC.
-        $('.searchsection > div').prepend('<div class="juris prefilter"><label for="juris">within</label><select multiple id="juris"><option value="">All Jurisdictions and Courts</option></select></div>');
+        $('.searchsection > div').prepend('<div class="juris prefilter"><label for="juris">within</label><div class="selecty"><a class="selecty-selected">All Jurisdictions and Courts</a></div></div>');
         $('.searchsection > div').prepend('<div class="hlct prefilter"><label for="hlct">starting in</label><select id="hlct"><option>Cases<option>Statutes and Legislation<option>Secondary Materials<option>Administrative Materials<option>Briefs, Pleadings and Motions<option>Administrative Codes and Regulations<option>Forms<option>News<option>Legal News<option>Dockets<option>Jury Verdicts and Settlements<option>Jury Instructions<option>Expert Witness Materials<option>Company and Financial<option>Directories<option>Scientific<option>Intellectual Property</select></div>');
 
         $('.searchsection > div').append('<div class="appliedfilters"><span>Narrow by:</span></div>');
@@ -52,15 +61,17 @@
             .append('<div class="divider moreopts"></div>')
             .append('<div class="prefilter moreopts pat"><label for="pat">practice areas</label><select multiple id="pat"><option>All Practice Areas</option></select></div>')
             .append('<div class="prefilter moreopts favs"><label for="favs">recent / favorites</label><select id="favs"><option>Select Recent or Favorite</option></select></div>')
-            .append('<div id="datefilters" class="moreopts"><button type="button" value="Previous Year">Within 1 year</button><button type="button" value="Previous 5 Years">within 5 years</button><button type="button" value="Previous 10 Years">within 10 years</button></div>')
+            .append('<div id="datefilters" class="moreopts"><button type="button" value="Previous Year">within 1 year</button><button type="button" value="Previous 5 Years">within 5 years</button><button type="button" value="Previous 10 Years">within 10 years</button></div>')
             .append('<div class="moreoptions"><button type="button"></button></div>')
             .prepend('<h2 class="sectionheader">Search</h2>');
+
+
+       $(".juris .selecty").append(jurisHTML);
 
        waitForKeyElements(".ssat-filters", loadpat, true);
        waitForKeyElements(".recent-favorites-filters", loadfavs, true);
 
-       var jurisfilter = new selecty(document.getElementById('juris')),
-            hlctfilter = new selecty(document.getElementById('hlct'));
+       var hlctfilter = new selecty(document.getElementById('hlct'));
 
 
         $('.pod-wrapper.browse')
@@ -89,11 +100,29 @@
         });
 
 
-
         $(document).on("click",".appliedfilters > button",function() {
             $(".deleteFilter[data-id*='"+$(this).data("id")+"']").click();
             $(this).remove();
             sourceCheck();
+        });
+
+        $(document).on("click",".prefilter > label, .prefilter .selecty-selected",function(e) {
+            if($(this).closest(".juris").length) {
+                $('#juris-tree').toggle();
+            } else {
+                e.preventDefault();
+                $(this).find(".selecty-selected")[0].click();
+            }
+        });
+
+        $(document).mouseup(function(e) {
+            var container = $("#juris-tree");
+            if($(e.target).closest(".juris").length === 0)
+            {
+                container.hide();
+            } else {
+                //alert($(e.currentTarget).parents("juris").length);
+            }
         });
 
 
@@ -109,9 +138,9 @@
             }
         });
 
-    }, false);
+   // }, false);
 
-    //}
+    }
 
     function applyPATFilters() {
           $(".ssat-filters input:checkbox").click();
