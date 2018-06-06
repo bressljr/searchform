@@ -46,7 +46,6 @@
   display: block;
   border: none;
   border-bottom: 1px solid #d9d6d4;
-  width: 100%;
   cursor: pointer;
   background: none;
   outline: none !important;
@@ -58,20 +57,20 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  padding-right:40px;
 }
 
 .selecty .selecty-selected:after {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  top: 50%;
-  width: 0;
-  height: 0;
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  border-top: 4px dashed #8d8480;
-  margin-top: -2px;
-  right: 16px;
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 30%;
+    right: 10px;
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 4px;
+    transform: rotate(45deg);
 }
 
 .selecty .selecty-selected:hover, .selecty .selecty-selected:active, .selecty .selecty-selected:focus {
