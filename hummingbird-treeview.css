@@ -24,6 +24,7 @@
 #juris-tree #globalopts label {
     display:inline-block;
     margin-left:20px;
+    line-height:1.5em;
 }
 
 .hummingbird-treeview,
@@ -97,7 +98,7 @@
 
 
 .hummingbird-end-node {
-    margin-left: 18px !important;
+    margin-left: 25px !important;
 }
 
 .hummingbird-treeview li ul {
@@ -109,8 +110,10 @@
     display: none;
 }
 
-.hummingbird-treeview .fa::before, .hummingbird-treeview .icon::before {
+.hummingbird-treeview .icon::after, .hummingbird-treeview .icon::before {
     font-weight:bold;
+    color:#5A90DC;
+    font-size:1.2em;
 }
 
 .hummingbird-treeview .fa, .hummingbird-treeview .icon {
@@ -119,9 +122,10 @@
     font-weight: bold;
     vertical-align: text-bottom;
     float: left;
-    margin-right: 3px;
+    margin-right: 8px;
     margin-top: 2px;
 }
+
 
 .hummingbird-treeview li {
     padding: 4px 0;
