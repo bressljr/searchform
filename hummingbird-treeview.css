@@ -35,6 +35,7 @@
 .hummingbird-treeview label {
     font-weight: normal;
     display: flex; 
+    position: relative;
 }
 
 .hummingbird-treeview input[type=checkbox] {
@@ -44,6 +45,54 @@
     margin: 2px 5px 0 0;
     flex-shrink: 0;
 }
+
+.hummingbird-treeview input[type=checkbox]:before {
+    content: '';
+    margin-right: 10px;
+    border: 2px solid #5a5a5a;
+    background: #fff;
+    width: 15px;
+    display: inline-block;
+    height: 15px;
+    border-radius: 2px;
+    vertical-align: bottom;
+}
+
+.hummingbird-treeview input[type=checkbox]:checked:before {
+    content: '';
+    margin-right: 10px;
+    border: 2px solid #5A90DC;
+    background: #5A90DC;
+    width: 15px;
+    display: inline-block;
+    height: 15px;
+    border-radius: 2px;
+    vertical-align: bottom;
+}
+.hummingbird-treeview input[type=checkbox]:checked:after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 1px;
+    width: 4px;
+    height: 8px;
+    border-top: 2px solid transparent;
+    border-left: 2px solid transparent;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    -webkit-transform: rotateZ(32deg);
+    transform: rotateZ(32deg);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+}
+
+.hummingbird-treeview input[type=checkbox]:indeterminate:before {
+    content: '';
+    background: #5A90DC;
+    outline: 3px solid #fff;
+    outline-offset: -5px;
+}
+
 
 .hummingbird-end-node {
     margin-left: 18px !important;
