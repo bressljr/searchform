@@ -66,7 +66,6 @@ a.selecty-selected > span {
   border:1px solid #d2d4d5;
 }
 
-
 /* More Options + Filters */
 .searchsection .prefilter.moreopts {
   grid-column: span 3;
@@ -136,19 +135,19 @@ a.selecty-selected > span {
     display:none;
 }
 
-.appliedfilters button {
+.appliedfilters button, span.jurisfilter {
     padding:5px 10px;
     background:#fff;
     border:1px solid #4A90E2;
     margin-left:10px;
 }
 
-.appliedfilters button > span {
+.appliedfilters button > span, span.jurisfilter > span {
     margin-left:10px;
     vertical-align: middle;
 }
 
-.appliedfilters button > span:before {
+.appliedfilters button > span:before, span.jurisfilter > span:before {
     color: #4A90E2; 
 }
 
