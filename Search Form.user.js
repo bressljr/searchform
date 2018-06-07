@@ -7,39 +7,39 @@
 // @require      https://gist.github.com/raw/2625891/waitForKeyElements.js
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js
 // @require      https://raw.githubusercontent.com/bressljr/searchform/master/selecty.js
-// @resource     customcss https://raw.githubusercontent.com/bressljr/searchform/master/styles.css?v=3
+// @resource     customcss https://raw.githubusercontent.com/bressljr/searchform/master/styles.css?v=5
 // @resource     selectycss https://raw.githubusercontent.com/bressljr/searchform/master/selecty.css?v=1
 // @resource     juriscss https://raw.githubusercontent.com/bressljr/searchform/master/hummingbird-treeview.css?v=3
-// @resource     jurishtml https://raw.githubusercontent.com/bressljr/searchform/master/juris.html?v=1
+// @resource     jurishtml https://raw.githubusercontent.com/bressljr/searchform/master/juris.html?v=4
 // @match        https://advance.lexis.com/usresearchhome/*
 // @match        https://advance.lexis.com/firsttime*
+// @match        https://advance.lexis.com/search*
 // @grant        GM_addStyle
 // @grant        GM_getResourceText
+// @grant        GM_setValue
+// @grant        GM_getValue
+// @grant        GM_deleteValue
 // ==/UserScript==
 
 
 (function() {
     'use strict';
 
-    var customCSS = GM_getResourceText ("customcss"),
+    waitForKeyElements(".content-switcher-list", switchHLCT, true);
+    waitForKeyElements(".ct-landing-wrapper", runMain, true);
+
+    function runMain() {
+
+        var customCSS = GM_getResourceText ("customcss"),
         selectyCSS = GM_getResourceText ("selectycss"),
         jurisCSS = GM_getResourceText ("juriscss"),
         faCSS = GM_getResourceText ("fontawesome"),
         jurisHTML = GM_getResourceText ("jurishtml");
 
-    GM_addStyle (customCSS);
-    GM_addStyle (selectyCSS);
-    GM_addStyle (jurisCSS);
-    GM_addStyle (faCSS);
-
-
-
-    waitForKeyElements(".ct-landing-wrapper", runMain, true);
-
-    //window.addEventListener('load', function() {
-
-    function runMain() {
-        //$("body").append(jurisHTML);
+        GM_addStyle (customCSS);
+        GM_addStyle (selectyCSS);
+        GM_addStyle (jurisCSS);
+        GM_addStyle (faCSS);
 
 
         //REMOVE UNUSED ELEMENTS
@@ -51,8 +51,8 @@
 
 
         //INJECT HLCT, JURIS, ETC.
-        $('.searchsection > div').prepend('<div class="juris prefilter"><label for="juris">within</label><div class="selecty"><a class="selecty-selected">All Jurisdictions and Courts</a></div></div>');
-        $('.searchsection > div').prepend('<div class="hlct prefilter"><label for="hlct">starting in</label><select id="hlct"><option>Cases<option>Statutes and Legislation<option>Secondary Materials<option>Administrative Materials<option>Briefs, Pleadings and Motions<option>Administrative Codes and Regulations<option>Forms<option>News<option>Legal News<option>Dockets<option>Jury Verdicts and Settlements<option>Jury Instructions<option>Expert Witness Materials<option>Company and Financial<option>Directories<option>Scientific<option>Intellectual Property</select></div>');
+        $('.searchsection > div').prepend('<div class="juris prefilter"><label for="juris">within</label><div class="selecty"><a class="selecty-selected"><i>All Jurisdictions and Courts</i></a></div></div>');
+        $('.searchsection > div').prepend('<div class="hlct prefilter"><label for="hlct">starting in</label><select id="hlct"><option value="urn:hlct:5">Cases</option><option value="urn:hlct:15">Statutes and Legislation</option><option value="urn:hlct:3">Secondary Materials</option><option value="urn:hlct:2">Administrative Materials<option value="urn:hlct:4">Briefs, Pleadings and Motions<option value="urn:hlct:1">Administrative Codes and Regulations<option value="urn:hlct:10">Forms<option value="urn:hlct:16">News<option value="urn:hlct:14">Legal News<option value="urn:hlct:8">Dockets<option value="urn:hlct:13">Jury Verdicts and Settlements<option value="urn:hlct:12">Jury Instructions<option value="urn:hlct:9">Expert Witness Materials<option value="urn:hlct:6">Company and Financial<option value="urn:hlct:7">Directories<option value="urn:hlct:18">Scientific<option value="urn:hlct:11">Intellectual Property</select></div>');
 
         $('.searchsection > div').append('<div class="appliedfilters"><span>Narrow by:</span></div>');
 
@@ -65,8 +65,28 @@
             .append('<div class="moreoptions"><button type="button"></button></div>')
             .prepend('<h2 class="sectionheader">Search</h2>');
 
+       $("#searchTerms").attr("placeholder","Enter Search Terms, Keywords, Citation, or shep: to Shepardize®");
 
+       $('#hlct option[value="'+GM_getValue("hlct")+'"]').attr("selected","selected");
        $(".juris .selecty").append(jurisHTML);
+
+       $(".hummingbird-treeview input:checkbox").click(function() {
+           var attr = $(this).attr('data-value');
+           $("input[data-id='"+attr+"']").click();
+           if($(this).is(":checked")) {
+              if (typeof attr !== typeof undefined && attr !== false) {
+               //add top filter
+                  $(".juris .selecty-selected").append("<span class='jurisfilter' data-id='"+attr+"'>"+$(this).data("id")+"<span class='icon la-CloseRemove'></span></span>").find("i").hide();
+              } else {
+                  //alert($(this).closest("input:checkbox[data-value=*'jur']").data("value"));
+               //above and swap out i
+               //bubble up and add filter
+              }
+           } else {
+               $(".juris .selecty-selected").find("span[data-id='"+attr+"']").remove();
+               $(".juris .selecty-selected").find("span").length || $(".juris .selecty-selected").find("i").show();
+           }
+       });
 
        waitForKeyElements(".ssat-filters", loadpat, true);
        waitForKeyElements(".recent-favorites-filters", loadfavs, true);
@@ -84,6 +104,7 @@
 
         $('.moreoptions > button').click(function() {
             $(".searchsection > div").toggleClass("showopts");
+            GM_setValue("moreopts",$(".searchsection > div").attr("class"));
         });
 
         $(document).on("click","*[data-action='addsource']",function() {
@@ -111,7 +132,7 @@
                 $('#juris-tree').toggle();
             } else {
                 e.preventDefault();
-                $(this).find(".selecty-selected")[0].click();
+                $(this).parent(".prefilter").find(".selecty-selected")[0].click();
             }
         });
 
@@ -120,8 +141,6 @@
             if($(e.target).closest(".juris").length === 0)
             {
                 container.hide();
-            } else {
-                //alert($(e.currentTarget).parents("juris").length);
             }
         });
 
@@ -131,23 +150,24 @@
             $('#datefilters > button').removeClass('active');
 
             if(alreadyActive) {
+               GM_deleteValue("date");
                $(".deleteFilter[data-id='date']").click();
             } else {
                $(this).addClass("active");
+               GM_setValue("date",$(this).val());
                setDate($(this).val());
             }
         });
 
-   // }, false);
-
     }
-
+/*
     function applyPATFilters() {
           $(".ssat-filters input:checkbox").click();
           $( "#pat option:selected" ).each(function() {
             $("*[data-id='"+$(this).val()+"']").click();
           });
     }
+    */
 
     function sourceCheck() {
          if(!$(".appliedfilters > button").length) {
@@ -188,6 +208,15 @@
              var dateFilter = $(".deleteFilter[data-id='date']").text();
              //switch statement here?
         }
+
+        //Move to function
+        $('#mainSearch').click(function(e) {
+            GM_setValue("hlct", $( "#hlct option:selected" ).val());
+        });
+
+        $('#datefilters > button[value="' + GM_getValue("date") + '"]').addClass("active");
+
+
     }
 
     function loadfavs() {
@@ -197,6 +226,16 @@
             favdropdown.append($("<option>").attr('value',$(this).attr("for")).text($(this).text()));
         });
         var favfilter = new selecty(document.getElementById('favs'));
+
+        $(".searchsection > div").addClass(GM_getValue("moreopts"));
+    }
+
+    function switchHLCT() {
+        $(".content-switcher-list").find("li[data-id='"+GM_getValue("hlct")+"']:not(.active) button").click();
+
+        $(document).on("click",".content-switcher-list li",function() {
+            GM_setValue("hlct",$(this).data("id"));
+        });
     }
 
 })();
