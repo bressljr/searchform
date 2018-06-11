@@ -2,7 +2,7 @@
     <div id="wrapper">
         <div id="globalopts">
             <label>
-                <input type="checkbox"> Include related federal content
+                <input type="checkbox" data-value="jur:1:78"> Include related federal content
             </label>
             <label>
                 <input type="checkbox"> All state courts (non federal)
@@ -17,7 +17,7 @@
                     <ul>
                         <li>
                             <label>
-                                <input class="hummingbird-end-node" id="hum_2" data-id="U.S. Supreme Court" type="checkbox"> U.S. Supreme Court</label>
+                                <input class="hummingbird-end-node" id="hum_2" data-id="U.S. Supreme Court" type="checkbox" data-value="jur:1:1"> U.S. Supreme Court</label>
                         </li>
                         <li>
                             <i class="icon la-ZoomIn"></i>
@@ -181,7 +181,7 @@
                         <li>
                             <i class="icon la-ZoomIn"></i>
                             <label>
-                                <input id="hum_33" data-id="2nd Circuit" type="checkbox"> 2nd Circuit</label>
+                                <input id="hum_33" data-value="jur:1:10" data-id="2nd Circuit" type="checkbox"> 2nd Circuit</label>
                             <ul>
                                 <li>
                                     <label>
@@ -300,7 +300,7 @@
                         <li>
                             <i class="icon la-ZoomIn"></i>
                             <label>
-                                <input id="hum_56" data-id="3rd Circuit" type="checkbox"> 3rd Circuit</label>
+                                <input id="hum_56" data-value="jur:1:11" data-id="3rd Circuit" type="checkbox"> 3rd Circuit</label>
                             <ul>
                                 <li>
                                     <label>
@@ -437,7 +437,7 @@
                         <li>
                             <i class="icon la-ZoomIn"></i>
                             <label>
-                                <input id="hum_82" data-id="4th Circuit" type="checkbox"> 4th Circuit</label>
+                                <input id="hum_82" data-value="jur:1:12" data-id="4th Circuit" type="checkbox"> 4th Circuit</label>
                             <ul>
                                 <li>
                                     <label>
@@ -632,7 +632,7 @@
                         <li>
                             <i class="icon la-ZoomIn"></i>
                             <label>
-                                <input id="hum_121" data-id="5th Circuit" type="checkbox"> 5th Circuit</label>
+                                <input id="hum_121" data-value="jur:1:13" data-id="5th Circuit" type="checkbox"> 5th Circuit</label>
                             <ul>
                                 <li>
                                     <label>
@@ -919,7 +919,7 @@
                         <li>
                             <i class="icon la-ZoomIn"></i>
                             <label>
-                                <input id="hum_180" data-id="6th Circuit" type="checkbox"> 6th Circuit</label>
+                                <input id="hum_180" data-value="jur:1:14" data-id="6th Circuit" type="checkbox"> 6th Circuit</label>
                             <ul>
                                 <li>
                                     <label>
@@ -1116,7 +1116,7 @@
                         <li>
                             <i class="icon la-ZoomIn"></i>
                             <label>
-                                <input id="hum_221" data-id="7th Circuit" type="checkbox"> 7th Circuit</label>
+                                <input id="hum_221" data-value="jur:1:15" data-id="7th Circuit" type="checkbox"> 7th Circuit</label>
                             <ul>
                                 <li>
                                     <label>
@@ -1259,7 +1259,7 @@
                         <li>
                             <i class="icon la-ZoomIn"></i>
                             <label>
-                                <input id="hum_250" data-id="8th Circuit" type="checkbox"> 8th Circuit</label>
+                                <input id="hum_250" data-value="jur:1:16" data-id="8th Circuit" type="checkbox"> 8th Circuit</label>
                             <ul>
                                 <li>
                                     <label>
@@ -1506,7 +1506,7 @@
                         <li>
                             <i class="icon la-ZoomIn"></i>
                             <label>
-                                <input id="hum_299" data-id="9th Circuit" type="checkbox"> 9th Circuit</label>
+                                <input id="hum_299" data-value="jur:1:17" data-id="9th Circuit" type="checkbox"> 9th Circuit</label>
                             <ul>
                                 <li>
                                     <label>
@@ -1853,7 +1853,7 @@
                         <li>
                             <i class="icon la-ZoomIn"></i>
                             <label>
-                                <input id="hum_367" data-id="10th Circuit" type="checkbox"> 10th Circuit</label>
+                                <input id="hum_367" data-value="jur:1:18" data-id="10th Circuit" type="checkbox"> 10th Circuit</label>
                             <ul>
                                 <li>
                                     <label>
@@ -2046,7 +2046,7 @@
                         <li>
                             <i class="icon la-ZoomIn"></i>
                             <label>
-                                <input id="hum_404" data-id="11th Circuit" type="checkbox"> 11th Circuit</label>
+                                <input id="hum_404" data-value="jur:1:19" data-id="11th Circuit" type="checkbox"> 11th Circuit</label>
                             <ul>
                                 <li>
                                     <label>
@@ -2197,7 +2197,7 @@
                         <li>
                             <i class="icon la-ZoomIn"></i>
                             <label>
-                                <input id="hum_435" data-id="D.C. Circuit" type="checkbox"> D.C. Circuit</label>
+                                <input id="hum_435" data-value="jur:1:20" data-id="D.C. Circuit" type="checkbox"> D.C. Circuit</label>
                             <ul>
                                 <li>
                                     <label>
@@ -2216,7 +2216,7 @@
                         <li>
                             <i class="icon la-ZoomIn"></i>
                             <label>
-                                <input id="hum_439" data-id="Fed. Circuit" type="checkbox"> Fed. Circuit</label>
+                                <input id="hum_439" data-id="Fed. Circuit" data-value="jur:1:21" type="checkbox"> Fed. Circuit</label>
                             <ul>
                                 <li>
                                     <label>
@@ -12348,6 +12348,7 @@
 
         //initializing
         $("#treeview, #treeview2, #treeview3, #treeview4").hummingbird();
+        loadjuris();
 
     });
 </script>
