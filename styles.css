@@ -151,6 +151,12 @@ a.selecty-selected > span {
     color: #4A90E2; 
 }
 
+.clearlink { 
+    text-align: right;
+    grid-column-start: 6;
+    grid-column-end: 7;
+}
+
 .selecty .selecty-options li { position:relative !important; }
 
 .pat .selecty .selecty-options li:before {
