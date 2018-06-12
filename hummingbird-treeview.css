@@ -15,11 +15,11 @@
     column-gap: 20px;
     row-gap: .5em;
     grid-template-rows: 50px auto;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
 }
 #juris-tree #globalopts {
     grid-column-start: 1;
-    grid-column-end: 5;
+    grid-column-end: 6;
     padding: 10px;
     border-bottom: 1px solid #d2d4d5;
 }
