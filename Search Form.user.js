@@ -68,7 +68,7 @@
             .append('<div class="moreoptions"><button type="button"></button></div>')
             .prepend('<h2 class="sectionheader">Search</h2>');
 
-
+        //INJECT CLEAR FORM BUTTON
         $('#clearform').click(function() {
             $('.jurisfilter').click();
             $(".selecty-options li.selected").click();
@@ -78,7 +78,7 @@
         });
 
 
-        //FORM SUBMISSION
+        //FORM SUBMISSION ACTIONS
         $("#searchTerms")
             .val("")
             .attr("placeholder","Enter Search Terms, Keywords, Citation, or shep: to Shepardize®")
@@ -104,6 +104,7 @@
 
             if (typeof attr !== typeof undefined && attr !== false) {  //Top level node
 
+                /*
                 if(attr ==="allfed") {
                     if(!$(this).is(":checked")) {
                         $(".selectNoneUS")[0].click();
@@ -111,6 +112,7 @@
                         $(".selectAllUS")[0].click();
                     }
                 }
+                */
 
                 if($(this).is(":checked")) {
                     if(!$("input[data-id='"+attr+"']").is(":checked") || checksilent) {
@@ -285,7 +287,7 @@
 
         $('.prefilter.pat li').click(function(e) {
             $("*[data-id='"+$(this).data("value")+"']").click();
-            $(".pat .selecty-selected")[0].click(); //TO get focus back
+            $(".pat .selecty-selected")[0].click(); //To get focus back
         });
 
         //Click the recent and favorites tab to get those as well
@@ -298,7 +300,6 @@
 
         GM_getValue("date") || $(".deleteFilter[data-id='date']").click()
         $('#datefilters > button[value="' + GM_getValue("date") + '"]').addClass("active");
-
     }
 
     function loadfavs() {
@@ -310,16 +311,24 @@
         var favfilter = new selecty(document.getElementById('favs'));
 
         $(".searchsection > div").addClass(GM_getValue("moreopts"));
+
+        $(".deleteFilter[data-id*='~^'], .deleteFilter[data-id*='querytemplate']").length && setSourceMode()
     }
 
 
-    function initializeForm() {
+    function setSourceMode() {
+        $("a.selecty-selected").html("N/A <span>(searching source)</span>");
+
+        $(".deleteFilter[data-id*='~^'], .deleteFilter[data-id*='querytemplate']").each(function() {
+             $(".appliedfilters").append('<button type="button" data-id="'+$(this).data("value")+'">'+$(this).find("span").text()+'<span class="icon la-CloseRemove"></span></button>').show();
+        });
+        $("#datefilters > button.active").removeClass("active");
+        GM_deleteValue("date");
 
     }
 
     function switchHLCT() {
         $(".content-switcher-list").find("li[data-id='"+GM_getValue("hlct")+"']:not(.active) button").click();
-
         /*
         $(document).on("click",".content-switcher-list li",function() {
             GM_setValue("hlct",$(this).data("id"));
