@@ -270,11 +270,11 @@ a.selecty-selected > span {
 
 
 /* Explore Content Updates */
-.exploresection > div.podwrapper {
+[data-podcssid=id-4t8c9gk] div.podwrapper {
     border-top: none !important;
 }
 
-.exploresection h2.sectionheader {
+[data-podcssid=id-4t8c9gk] h2.header {
     display:none;
 }
 
