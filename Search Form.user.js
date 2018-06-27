@@ -7,7 +7,7 @@
 // @require      https://gist.github.com/raw/2625891/waitForKeyElements.js
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js
 // @require      https://raw.githubusercontent.com/bressljr/searchform/master/selecty.js
-// @resource     customcss https://raw.githubusercontent.com/bressljr/searchform/master/styles.css?v=4
+// @resource     customcss https://raw.githubusercontent.com/bressljr/searchform/master/styles.css?v=3
 // @resource     selectycss https://raw.githubusercontent.com/bressljr/searchform/master/selecty.css?v=1
 // @resource     juriscss https://raw.githubusercontent.com/bressljr/searchform/master/hummingbird-treeview.css?v=5
 // @resource     jurishtml https://raw.githubusercontent.com/bressljr/searchform/master/juris.html?v=4
@@ -329,6 +329,22 @@
 
     function switchHLCT() {
         $(".content-switcher-list").find("li[data-id='"+GM_getValue("hlct")+"']:not(.active) button").click();
+
+        window.onload = function () {
+            if (typeof history.pushState === "function") {
+                history.pushState("jibberish", null, null);
+                window.onpopstate = function () {
+                    history.pushState('newjibberish', null, null);
+                    window.location.replace($("#nav_currentproduct_button").attr("href"));
+                    //$("#nav_currentproduct_button")[0].click();
+                    // Handle the back (or forward) buttons here
+                    // Will NOT handle refresh, use onbeforeunload for this.
+                };
+            }
+        }
+
+
+
         /*
         $(document).on("click",".content-switcher-list li",function() {
             GM_setValue("hlct",$(this).data("id"));
