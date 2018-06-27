@@ -270,12 +270,21 @@ a.selecty-selected > span {
 
 
 /* Explore Content Updates */
+/*
 [data-podcssid=id-4t8c9gk] div.podwrapper {
     border-top: none !important;
 }
 
 [data-podcssid=id-4t8c9gk] h2.header {
     display:none;
+}
+*/
+.browse .globalpod-header {
+    display: none;
+}
+
+.browse .podwrapper {
+    border-top: none !important;
 }
 
 .browse .podwrapper {
